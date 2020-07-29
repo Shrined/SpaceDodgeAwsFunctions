@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SpaceDodgeFunctions:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpaceDodgeFunctions_jar</output-path>
+    <root id="archive" name="SpaceDodgeFunctions.jar">
+      <element id="module-output" name="SpaceDodgeFunctions" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../.m2/repository/joda-time/joda-time/2.6/joda-time-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../.m2/repository/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../.m2/repository/com/amazonaws/aws-lambda-java-core/1.2.0/aws-lambda-java-core-1.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../.m2/repository/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../.m2/repository/com/amazonaws/aws-lambda-java-events/3.1.0/aws-lambda-java-events-3.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
