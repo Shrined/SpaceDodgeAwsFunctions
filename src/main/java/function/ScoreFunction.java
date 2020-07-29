@@ -1,7 +1,9 @@
 package function;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
@@ -63,20 +65,21 @@ public class ScoreFunction implements RequestHandler<APIGatewayProxyRequestEvent
         preparedStatement.execute();
     }
 
-    private Map<String, String>  getTopScores(LambdaLogger logger) throws SQLException {
+    private List<Player> getTopScores(LambdaLogger logger) throws SQLException {
         Statement statement = getConnection(logger).createStatement();
         ResultSet resultSet = statement.executeQuery(SQL_SELECT);
-        return convertResultsToMap(resultSet);
+        return convertResultsToList(resultSet);
     }
 
-    private Map<String, String> convertResultsToMap(ResultSet resultSet) throws SQLException {
+    private List<Player> convertResultsToList(ResultSet resultSet) throws SQLException {
+        List<Player> players = new ArrayList<>();
         Map<String, String> resultMap = new HashMap<>();
         while (resultSet.next()) {
             String usernameColumn = resultSet.getString("username");
             String scoreColumn = resultSet.getString("score");
-            resultMap.put(usernameColumn, scoreColumn);
+            players.add(new Player(usernameColumn, scoreColumn));
         }
-        return resultMap;
+        return players;
     }
 
 
